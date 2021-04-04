@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+
+<hr>
+<ul>
+  <li>User Name : {{user.userName}}</li>
+  <li>Mobile No : {{user.mobileNo}}</li>
+  <li>Email Id : {{user.emailId}}</li>
+  <li>Skills: {{user.skills}}</li>
+</ul>
+<h2>Skills using *ngFor: </h2>
+<ol>
+  <li *ngFor="let skill of user.skills">{{skill}}</li>
+</ol>
+
+<hr>
+<h2>Arithmetic Operation :</h2>
+<h3><strong ngNonBindable> {{(5*5+1)/2}}</strong> : {{(5*5+1)/2}}</h3>
+
+<hr>
+<h3>Built in Pipes : {{user.userName | uppercase}}</h3>
+
+<hr>
+<h2>Event Binding</h2>
+<div>
+  <label for="skill">New Skill</label>
+  <input type="text" name="skill" #Skill />
+  <button (click)="user.addSkill(Skill.value)">ADD</button>
+</div>
